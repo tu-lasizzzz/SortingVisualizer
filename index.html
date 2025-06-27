@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="sorting-visualizer.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sorting Algorithm Visualizer</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="algorithm-select">Algorithm:</label>
+                <select id="algorithm-select">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="speed-select">Speed:</label>
+                <select id="speed-select">
+                    <option value="50">Fast</option>
+                    <option value="150">Medium</option>
+                    <option value="300">Slow</option>
+                </select>
+            </div>
+            
+            <button id="generate-btn" class="btn btn-primary">Generate New Array</button>
+            <button id="start-btn" class="btn btn-success">Start Sorting</button>
+            <button id="stop-btn" class="btn btn-danger" disabled>Stop Sorting</button>
+        </div>
+        
+        <div class="visualization-area">
+            <div id="array-container" class="array-container">
+                <!-- Array bars will be generated here -->
+            </div>
+        </div>
+        
+        <div class="legend">
+            <h3>Color Legend</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="color-box unsorted"></div>
+                    <span>Unsorted</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box comparing"></div>
+                    <span>Comparing</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box swapping"></div>
+                    <span>Swapping</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box sorted"></div>
+                    <span>Sorted</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="algorithm-info">
+            <h3>Algorithm Information</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Bubble Sort</h4>
+                    <p>Compares adjacent elements and swaps them if they're in wrong order.</p>
+                    <p><strong>Time Complexity:</strong> O(n²)</p>
+                </div>
+                <div class="info-card">
+                    <h4>Selection Sort</h4>
+                    <p>Finds the minimum element and places it at the beginning.</p>
+                    <p><strong>Time Complexity:</strong> O(n²)</p>
+                </div>
+                <div class="info-card">
+                    <h4>Insertion Sort</h4>
+                    <p>Builds the sorted array one item at a time.</p>
+                    <p><strong>Time Complexity:</strong> O(n²)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="sorting-visualizer.js"></script>
+</body>
+</html>
